@@ -13,6 +13,7 @@ app.set('views','./app/views');//setar aonde estar as views
 //incluir o body-parser
 app.use(bodyParser.urlencoded({extended:true}));//middleware
 app.use(expressValidator());
+app.use(express.static('./app/public'));//adciona arquivos static
 
 
 consign()
