@@ -14,7 +14,9 @@ NoticiasDAO.prototype.getNoticia = function(callback){
 NoticiasDAO.prototype.salvarNoticia =function(noticia,callback){
         this._connection.query('insert into noticia set ?',noticia,callback);//set ja salvar o json direto no banco de dado
     };
-
+NoticiasDAO.prototype.get5UltimasNoticias = function(callback){
+        this._connection.query("select *from noticia order by data_criacao desc limit 5",callback)//comando sql ordenar por data de criação retornar as 5 primeiras
+}
 
 module.exports =function(){
 

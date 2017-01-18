@@ -1,5 +1,11 @@
 ﻿module.exports.home=function(app,req,res){
-        res.render("home/index");
-        console.log('Chamando pagina home...');
+
+        var connection = app.config.dbConnection();
+        var noticiasModels= new app.app.models.NoticiasDAO(connection);
+
+        noticiasModels.get5UltimasNoticias( function(erro,result){
+                console.log(result);
+                res.render("home/index",{noticias:result});
+        }); 
 
 }
