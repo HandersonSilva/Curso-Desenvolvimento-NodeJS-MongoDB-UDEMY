@@ -15,8 +15,9 @@ module.exports.noticia= function(app,req,res){
         
           var connection = app.config.dbConnection();//criando a conexã
           var modelNoticia = new app.app.models.NoticiasDAO(connection);//Instanciando o model
-
-          modelNoticia.getNoticia(function(erro,result){//realizar uma consulta e enviar para o browser
+          var id_noticia = req.query;
+          
+          modelNoticia.getNoticia(id_noticia,function(erro,result){//realizar uma consulta e enviar para o browser
                   //res.send(result);//passar arquivo json
                   res.render("noticias/noticia",{noticia:result})//passando o result para a view
                   console.log('chamando a pagina noticia...');
