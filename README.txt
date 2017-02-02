@@ -1,1 +1,3 @@
---Projeto Portal de noticias do Curso  Desenvolvimento NodeJS e MongoDB da UDEMY--
+--Projeto realizado no Curso  Desenvolvimento NodeJS e MongoDB da UDEMY--
+--Site com Nodejs
+--Portal de noticias---
